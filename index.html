@@ -7,6 +7,14 @@
   var images = new Array("img/slide1.jpg", "img/slide2.jpg", "img/slide3.jpg", "img/slide6.jpg", "img/slide4.jpg",
                 "img/slide5.jpg");
   var nextImage = 0;
+
+  function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+      $('<img/>')[0].src = this;
+    });
+  }
+
+  preload(images);
   doSlideshow();
 
   function doSlideshow() {
